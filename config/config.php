@@ -5,18 +5,16 @@
  * Date: 01/04/2018
  * Time: 13.10
  */
-define('URL', 'http://localhost/kurirbungdav/');
-define('CORPORATE', URL.'corporate/');
-define('ORDER', URL.'order/');
-define('MANAGEMENT', URL.'management/');
-define('PAYMENT', URL.'payment/');
-define('BD', URL.'bd/');
+define('URL', 'http://localhost/florist/');
+define('PRODUCTION', 'http://localhost/bungdav/');
 
 
 require 'api.php';
 require 'session.php';
 
 $config = new Admin();
+
+$userdata = $config->sessionFlorist();
 
 if(isset($_SESSION['user_session']))
 {

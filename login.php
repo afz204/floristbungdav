@@ -65,7 +65,7 @@ $pass = password_verify('hello', 'makan');
         ?>
 
         <div class="card mb-6">
-            <div class="card-header">Login Kurir</div>
+            <div class="card-header bg-success text-white">Login Florist</div>
             <div class="card-body">
                 <form id="form-login" method="post" data-parsley-validate="" autocomplete="off">
                     <div class="form-label-group">
@@ -75,7 +75,7 @@ $pass = password_verify('hello', 'makan');
                     <div class="form-label-group">
                         <input name="txt_password" type="password" class="form-control" placeholder="Password" required />
                     </div>
-                    <button type="submit" class="btn btn-lg btn-outline-info btn-block" name="btn-login">Sign in</button>
+                    <button type="submit" class="btn btn-lg btn-outline-success btn-block" name="btn-login">Sign in</button>
                 </form>
             </div>
         </div>

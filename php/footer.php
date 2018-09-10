@@ -36,7 +36,7 @@ Many operating systems, software frameworks, and programs include a logging syst
     <script type="text/javascript" src="<?=URL?>assets/vendors/datetime-picker4/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="<?=URL?>assets/vendors/daterangepicker/daterangepicker.js"></script>
     <script type="text/javascript" src="<?=URL?>assets/vendors/jquery.countdown-2.2.0/jquery.countdown.min.js"></script>
-     <?php if($menu == 'order' OR $footer == 'neworder' OR $footer == 'detailtrx'){ ?>
+     
         <script src="<?=URL?>assets/vendors/smartWizard/js/jquery.smartWizard.min.js"></script>
         <script src="<?=URL?>assets/vendors/bootstrapValidator/validator.js"></script>
         <script src="<?=URL?>assets/vendors/lightbox/ekko-lightbox.js" type="text/javascript"></script> 
@@ -47,12 +47,9 @@ Many operating systems, software frameworks, and programs include a logging syst
             });
         </script>
         <script type="text/javascript" src="<?=URL?>assets/vendors/dll/jquery.number.min.js"></script>
-    <?php } ?>
     <?php if($menu == 'order' && $footer == 'neworder'){ ?>
         <script src="<?=URL?>assets/js/modul/createorder.js"></script>
     <?php } ?>
-    <?php if($menu == 'bd'){ ?>
-
         <script src="<?=URL?>assets/vendors/krajeee/js/fileinput.js" type="text/javascript"></script>
         <script src="<?=URL?>assets/vendors/krajeee/js/locales/fr.js" type="text/javascript"></script>
         <script src="<?=URL?>assets/vendors/krajeee/js/locales/es.js" type="text/javascript"></script>
@@ -67,24 +64,8 @@ Many operating systems, software frameworks, and programs include a logging syst
                 $(this).ekkoLightbox();
             });
         </script>
-        <script src="<?=URL?>assets/js/modul/bd.js"></script>
-    <?php } ?>
+  
     <script src="<?=URL?>assets/js/custom.js"></script>
-    <?php if($menu == 'corporate'){ ?>
-    <script src="<?=URL?>assets/js/modul/corporate.js"></script>
-    <?php } if($menu == 'order'){ ?>
-    <script src="<?=URL?>assets/js/modul/order.js"></script>
-    <?php } if($menu == 'payment'){ ?>
-    <script src="<?=URL?>assets/js/modul/kas.js"></script>
-    <?php } if($menu == 'management'){ ?>
-        <script src="<?=URL?>assets/js/modul/management.js"></script>
-    <?php } if($menu == 'kurir'){ ?>
-        <script src="<?=URL?>assets/js/modul/kurir.js"></script>
-    <?php } if($menu == 'production'){?>
-        <script src="<?=URL?>assets/js/modul/stocks.js"></script>
-    
-    <?php } ?>
-
 
     <?php if($menu == 'bd' && $footer = 'detail'){ ?>
         <script type="text/javascript">

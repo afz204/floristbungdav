@@ -1,186 +1,69 @@
-<style>
-table {
-    display: block;
-    width: 100%;
-}
-table tr td {
-    padding: 1%;
-    font-size: 14px;
-}
-table tr td[id="1"] {
-    width: 100px;
-    font-weight: 500;
-    vertical-align: top;
-}
-table tr td[id="2"] {
-    width: 10px;
-    text-align: center;
-    vertical-align: top;
-}
-table tr td[id="3"] {
-    width: 200px; 
-    vertical-align: top;
-}
-table tr td[id="4"] {
-    vertical-align: top;
-    text-align: center;
-    padding-bottom: 2%;
-    border-bottom: 1px dashed #8e8a8a;
-}
-.badge {
-    display: inline-block;
-    padding: .30em .7em;
-    font-size: 90%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .2rem;
-}
-</style>
-<main role="main" class="container">
-      <div class="my-3 p-3 bg-white rounded shadow-sm">
-        <h6 class="border-bottom border-gray pb-2 mb-0">New Jobs</h6>
-        <div class="media text-muted pt-3">
-          <div class="row">
-                <div class="content">
-                    <table border="0">
-                        <tr>
-                            <td colspan="3">
-                            <div class="title">
-                                <a href="<?=URL?>index/?p=detail&order=789987678">OrderNumber #BD_98769876</a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kirim Ke</td>
-                            <td id="2">:</td>
-                            <td id="3">Pondok Cabe  </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Alamat</td>
-                            <td id="2">:</td>
-                            <td id="3">Cipinang indah 2 blok ee 12a  </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kelurahan</td>
-                            <td id="2">:</td>
-                            <td id="3">Pondok Cabe</td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kecamatan</td>
-                            <td id="2">:</td>
-                            <td id="3">Ujung Pandang</td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kota</td>
-                            <td id="2">:</td>
-                            <td id="3">Jakarta Timur</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" id="4">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-sm btn-outline-success">Acept</button>
-                                <button type="button" class="btn btn-sm btn-outline-danger">Reject </button>
-                            </div>
-                            </td>
-                        </tr>
-                    </table>
-                    <table border="0">
-                        <tr>
-                            <td colspan="3">
-                            <div class="title">
-                                <a href="<?=URL?>index/?p=detail&order=789987678">OrderNumber #BD_98769876</a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kirim Ke</td>
-                            <td id="2">:</td>
-                            <td id="3">Pondok Cabe  </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Alamat</td>
-                            <td id="2">:</td>
-                            <td id="3">Cipinang indah 2 blok ee 12a  </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kelurahan</td>
-                            <td id="2">:</td>
-                            <td id="3">Pondok Cabe</td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kecamatan</td>
-                            <td id="2">:</td>
-                            <td id="3">Ujung Pandang</td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kota</td>
-                            <td id="2">:</td>
-                            <td id="3">Jakarta Timur</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" id="4">
-                            <span class="badge badge-success">Acepted</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <table border="0">
-                        <tr>
-                            <td colspan="3">
-                            <div class="title">
-                                <a href="<?=URL?>index/?p=detail&order=789987678">OrderNumber #BD_98769876</a>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kirim Ke</td>
-                            <td id="2">:</td>
-                            <td id="3">Pondok Cabe  </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Alamat</td>
-                            <td id="2">:</td>
-                            <td id="3">Cipinang indah 2 blok ee 12a  </td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kelurahan</td>
-                            <td id="2">:</td>
-                            <td id="3">Pondok Cabe</td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kecamatan</td>
-                            <td id="2">:</td>
-                            <td id="3">Ujung Pandang</td>
-                        </tr>
-                        <tr>
-                            <td id="1">Kota</td>
-                            <td id="2">:</td>
-                            <td id="3">Jakarta Timur</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" id="4">
-                            <span class="badge badge-danger">Reject</span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-          </div>
-        </div>
-      </div>
+<?php
 
-      <div class="my-3 p-3 bg-white rounded shadow-sm">
-        <h6 class="border-bottom border-gray pb-2 mb-0">History Jobs</h6>
-        <div class="media text-muted pt-3">
-          <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16585e38c22%20text%20%7B%20fill%3A%23007bff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16585e38c22%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23007bff%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2211.546875%22%20y%3D%2216.9%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 32px; height: 32px;">
-          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <div class="d-flex justify-content-between align-items-center w-100">
-              <strong class="text-gray-dark">Full Name</strong>
-              <a href="#">Follow</a>
+    $arrstatusorder = array(
+        0 => 'New Order',
+        1 => 'On Production',
+        2 => 'On Delivery',
+        3 => 'Success',
+        4 => 'Return',
+        5 => 'Complain',
+    );
+
+    $listjobs = $config->runQuery("select t.*, td.* from transaction as t
+    left join transaction_details as td on td.id_trx = t.transactionID
+    where t.statusOrder = '1' and t.id_florist = '". $userdata['ID'] ."'");
+    $listjobs->execute();
+?>
+<style>
+    .col-md-4 img {
+        display: block;
+        width: 100%;
+        padding: 1%;
+    }
+</style>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item text-success" aria-current="page"><b>New Order</b></li>
+  </ol>
+</nav>
+
+<div class="row mb-2" style="display: inline-flex;">
+    <?php while($data = $listjobs->fetch(PDO::FETCH_LAZY)) { 
+            $product = $config->getData('*', 'products', "product_id = '". $data['id_product'] ."'");
+        ?>
+    <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="row" style="display: inline-flex;">
+                <div class="col-md-8">
+                    <div class="d-flex flex-column align-items-start">
+                        <a href="javascript:;" class="badge badge-primary"><?=$arrstatusorder[$data['statusOrder']]?></a>
+                        <h3 class="mb-0">
+                        <a class="text-dark" href="javascript:;"><?=$data['product_name']?></a>
+                        </h3>
+                        <div class="mb-1 text-muted">Delivery Date: <b><?=Date('d F Y', strtotime($data['delivery_date']))?></b> <br> Time: <b><?=$data['delivery_time']?></b></div>
+                        <br>Notes Florist:
+                        <p class="card-text mb-auto" style="border: 1px dashed #dc3545; border-radius: 4px; padding: 1%; display: block; width: 100%;"><?=$data['florist_remarks']?></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                        <picture>
+                            <a href="<?=PRODUCTION.'assets/images/product/'.$product['images']?>" data-toggle="lightbox" data-gallery="example-gallery">
+                                    <img src="<?=PRODUCTION.'assets/images/product/'.$product['images']?>" class="img-fluid img-thumbnail">
+                                </a>
+                        </picture>
+                    <!-- <img class="card-img-right flex-auto d-none d-md-block img-responsive img-thumbnail" alt="Thumbnail [200x250]" src="<?=PRODUCTION?>assets/images/product/<?=$product['images']?>" data-holder-rendered="true" width="100%;"> -->
+                </div>
             </div>
-            <span class="d-block">@username</span>
-          </div>
         </div>
-      </div>
-    </main>
+    </div>
+    <?php } ?>
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item text-secondary" aria-current="page"><b>History</b></li>
+  </ol>
+</nav>
+
+

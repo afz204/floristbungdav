@@ -18,15 +18,15 @@ class Login
     {
         try
         {
-            $stmt = $this->conn->prepare("SELECT * FROM kurirs WHERE email=:uname");
+            $stmt = $this->conn->prepare("SELECT * FROM florist WHERE Email=:uname");
             $stmt->execute(array(':uname'=>$username));
             $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
             if($stmt->rowCount() == 1)
             {
-                if(password_verify($password, $userRow['password']))
+                if(password_verify($password, $userRow['Password']))
                 {
-                    if($userRow['status'] == '1'){
-                        $_SESSION['user_session'] = $userRow['id'];
+                    if($userRow['IsActive'] == '1'){
+                        $_SESSION['user_session'] = $userRow['ID'];
                         
                         return true;
                     }else{
@@ -109,6 +109,16 @@ class Admin
         $stmt->execute(array(':user_id' => $id));
         $stmt = $stmt->fetch(PDO::FETCH_LAZY);
         $stmt = $stmt['id'];
+        return $stmt;
+
+    }
+
+    public function sessionFlorist()
+    {
+        $id = $_SESSION['user_session'];
+        $stmt = $this->conn->prepare("SELECT * FROM florist WHERE ID = :user_id");
+        $stmt->execute(array(':user_id' => $id));
+        $stmt = $stmt->fetch(PDO::FETCH_LAZY);
         return $stmt;
 
     }
@@ -712,7 +722,15 @@ class Admin
 
         return $password;
     }
-    
+
+    function _debugvar($var){
+        echo '<pre>';
+        $data = var_dump($var);
+        echo '</pre>';
+
+        return $data;
+    }
+
     function url(){
         if(isset($_SERVER['HTTPS'])){
             $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
