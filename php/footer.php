@@ -58,12 +58,6 @@ Many operating systems, software frameworks, and programs include a logging syst
         <script src="<?=URL?>assets/vendors/lightbox/ekko-lightbox.js" type="text/javascript"></script>
 
         <script src="<?=URL?>assets/js/modul/product.js"></script>
-        <script type="text/javascript">
-            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
-        </script>
   
     <script src="<?=URL?>assets/js/custom.js"></script>
 

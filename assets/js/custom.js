@@ -6,6 +6,24 @@ function hideContent(id1, id2) {
 function btn_submit(id) {
     $('#' + id).html('<span class="badge badge-primary text-center" style="font-size: 14px; margin-left: 40%;">Please wait while loading!!!!</span>');
 }
+
+function changejobsflorist(id) {
+    $.ajax({
+        url: 'php/ajax/order.php?type=jobsflorist',
+        type: 'post',
+        data: 'transactionDetailsID=' + id,
+        success: function(msg) {
+            alert(msg);
+            location.reload();
+        }
+    });
+}
+
+function pilihKurir(trx) {
+    $('#modalselectkurir').modal({ show: true, backdrop: 'static', keyboard: false });
+    $('[name="TransactionNumberKurir"]').val(trx);
+    $('#listKurir').select2({ width: '100%', theme: "bootstrap4" });
+}
 $(document).ready(function() {
 
     $('#ProvinsiCorporate').select2({ width: '100%', theme: "bootstrap4" });
@@ -155,5 +173,21 @@ $(document).ready(function() {
                 })
             }
         });
+    });
+    $('#formSelectKurir').on('submit', function(e) {
+        e.preventDefault();
+        var trx = $('[name="TransactionNumberKurir"]').val();
+        var id = $('#listKurir option:selected').val();
+
+        $.ajax({
+            url: 'php/ajax/order.php?type=selectKurir',
+            type: 'post',
+            data: 'transctionID=' + trx + '&KurirID=' + id,
+            success: function(msg) {
+                alert(msg);
+                location.reload();
+            }
+        });
+
     });
 })

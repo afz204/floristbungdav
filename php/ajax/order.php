@@ -634,18 +634,52 @@ if($_GET['type'] == 'selectFlorist'){
         echo 'Failed!';
     }
 }
-if($_GET['type'] == 'selectKurir'){
-    $a = $_POST['transctionID'];
-    $b = $_POST['KurirID'];
+if($_GET['type'] == 'jobsflorist'){
+    $a = $_POST['transactionDetailsID'];
 
-    $stmt = "UPDATE transaction_details SET id_kurir = '". $b ."' WHERE id_trx = '". $a ."'";
+    $stmt = "UPDATE transaction_details SET florist_action = 2 WHERE id = '". $a ."'";
     $stmt = $config->runQuery($stmt);
     $stmt->execute();
 
     if($stmt){
         echo $config->actionMsg('u', 'transaction_details');
-        $logs = $config->saveLogs($a, $admin, 'u', 'update kurir!');
+        $logs = $config->saveLogs($a, $admin, 'u', 'change status jobs!');
     }else{
         echo 'Failed!';
+    }
+}
+
+if($_GET['type'] == 'selectKurir'){
+    $a = $_POST['transctionID'];
+    $b = $_POST['KurirID'];
+
+    $stmt = "UPDATE transaction SET id_kurir = '". $b ."', statusOrder = 2 WHERE transactionID = '". $a ."'";
+    $stmt = $config->runQuery($stmt);
+    $stmt->execute();
+    $tanggall = $config->getDate("Y-m-d H:m:s");
+    
+    $cekdata = $config->getData('COUNT(*) as data', 'kurir_jobs', "TransactionNumber = '". $a ."'");
+    if($cekdata['data'] > 0) {
+        $updatejobs = "UPDATE kurir_jobs SET Status = 1 WHERE TransactionNumber = :a";
+        $updatejobs = $config->runQuery($updatejobs);
+        $updatejobs->execute(array(':a' => $a));
+
+        if($updatejobs) {
+            $insert = "INSERT INTO kurir_jobs (TransactionNumber, KurirID, Created_date, Created_by) VALUES ('". $a ."', '". $b ."', '".$tanggall ."', '". $admin ."')";
+            $insert = $config->runQuery($insert);
+            $insert->execute();
+            echo $config->actionMsg('u', 'kurir_jobs');
+            $logs = $config->saveLogs($a, $admin, 'u', 'insert jobs kurir!');
+        }
+    } else {
+        if($stmt){
+            $insert = "INSERT INTO kurir_jobs (TransactionNumber, KurirID, Created_date, Created_by) VALUES ('". $a ."', '". $b ."', '".$tanggall ."', '". $admin ."')";
+            $insert = $config->runQuery($insert);
+            $insert->execute();
+            echo $config->actionMsg('u', 'kurir_jobs');
+            $logs = $config->saveLogs($a, $admin, 'u', 'update jobs kurir!');
+        }else{
+            echo 'Failed!';
+        }
     }
 }

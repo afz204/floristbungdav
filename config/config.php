@@ -26,7 +26,7 @@ if(isset($_SESSION['user_session']))
 $url = "$_SERVER[REQUEST_URI]";
 $url = explode('/', $url);
 
-$menu = $url[2]; //menu
+$menu = isset($url[2]) ? $url[2] : ''; //menu
 if(empty($menu)){
     $menu = 'index';
 }else{
