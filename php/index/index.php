@@ -24,7 +24,7 @@
     LEFT JOIN regencies on regencies.id = t.kota_id 
     LEFT JOIN districts ON districts.id = t.kecamata_id 
     LEFT JOIN villages on villages.id = t.kelurahan_id
-    where t.statusOrder = 1 and t.id_kurir = '' and t.delivery_date = '". $config->getDate('Y/m/d') ."' and t.id_florist = '". $userdata['ID'] ."' ORDER BY t.transactionID DESC");
+    where t.statusOrder = 1 and t.id_kurir = '' and t.delivery_date = '". $config->getDate('Y/m/d') ."' and t.id_florist = '". $userdata['ID'] ."' ORDER BY t.delivery_date DESC");
     $listjobs->execute();
 
     $oldjob = $config->runQuery("select t.*, td.*, td.id as DetailTransactionID, kurirs.nama_kurir, provinces.name as ProvinsiName, regencies.name as KotaName, districts.name as Kecamatan, villages.name as Kelurahan from transaction as t
@@ -34,7 +34,7 @@
     LEFT JOIN regencies on regencies.id = t.kota_id 
     LEFT JOIN districts ON districts.id = t.kecamata_id 
     LEFT JOIN villages on villages.id = t.kelurahan_id
-    where t.statusOrder = 1 and t.id_kurir = '' and t.delivery_date != '". $config->getDate('Y/m/d') ."' and t.id_florist = '". $userdata['ID'] ."'");
+    where t.statusOrder = 1 and t.id_kurir = '' and t.delivery_date != '". $config->getDate('Y/m/d') ."' and t.id_florist = '". $userdata['ID'] ."' ORDER BY t.delivery_date DESC");
     $oldjob->execute();
 
     $history = $config->runQuery("select t.*, td.*, kurirs.nama_kurir, provinces.name as ProvinsiName, regencies.name as KotaName, districts.name as Kecamatan, villages.name as Kelurahan from transaction as t
@@ -44,11 +44,11 @@
     LEFT JOIN regencies on regencies.id = t.kota_id 
     LEFT JOIN districts ON districts.id = t.kecamata_id 
     LEFT JOIN villages on villages.id = t.kelurahan_id
-    where t.statusOrder = 2 and t.id_kurir != '' and t.id_florist = '". $userdata['ID'] ."'");
+    where t.statusOrder = 2 and t.id_kurir != '' and t.id_florist = '". $userdata['ID'] ."' ORDER BY t.delivery_date DESC");
     $history->execute();
     // $config->_debugvar($history);
     $florist = explode('@', $userdata['Email']);
-    $listkurir = $config->Products('id, nama_kurir', 'kurirs');
+    $listkurir = $config->Products('id, nama_kurir', 'kurirs WHERE status = 1');
 ?>
 <style>
     .col-md-4 img {
